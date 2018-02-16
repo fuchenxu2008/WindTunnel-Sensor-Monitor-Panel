@@ -1,0 +1,415 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,200,600,900,700);
+body,html{
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    color: #cdcfce;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+body{
+    background: #ccc;
+    text-align: center;
+}
+nav#navi{
+    border:none;border-radius:0;z-index:5;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, .7);
+	transform-style: preserve-3d;
+}
+
+div#navbar ul li{
+    cursor: pointer;
+}
+
+div#about h1 span:nth-of-type(1) {
+  color: #2b908f;
+  font-weight: 400;
+}
+div#about h1 span:nth-of-type(2) {
+  color: #90ee7e;
+}
+
+div#about {
+
+    margin-top: -40px;
+    padding: 20px;
+    padding-bottom: 20px;
+    background-color: rgb(56,56,56);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, .7);
+}
+h3#time{
+    float: left;
+    margin: 0;
+    padding-top:3px;
+    padding-bottom:3px;
+}
+div#indicator{
+    float: right;
+    position: relative;
+    top:50%;
+    transform:translateY(35%);
+}
+
+#control-panel {
+  height: 100%;
+  padding: 1%;
+  width: 100%;
+  overflow: hidden;
+transform-style: preserve-3d;
+}
+#commandSet{
+    /*position: relative;
+    top: 50%;
+    transform: translateY(110%);*/
+    color:grey;
+    float: right;
+    margin:0;
+    display:none;
+}
+.btncontainer{
+    /*width: 100%;*/
+    padding-left: 10px;
+    margin: 0;
+}
+.btncontainer li {
+  padding: 30px;
+  display: table-cell;
+}
+.control-btn {
+  display: block;
+  background: #ddd;
+  position: relative;
+  margin: auto;
+  cursor: pointer;
+  text-align: center;
+  font-family: Arial;
+  font-size: 30px;
+  line-height: 50px;
+  border-radius: 25px;
+  color: #333;
+  text-shadow: 0px 1px 0px #fff;
+  width: 50px;
+  height: 50px;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.6), inset 0px 1px 3px #fff;
+  -webkit-transition: all 0.1s ease-out;
+  -moz-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+.control-btn:hover {
+  background: #eee;
+  box-shadow: 0px 12px 15px rgba(0, 0, 0, 0.6);
+}
+.control-btn:active {
+  color: #555;
+  text-shadow: 0px 1px 0px #aaa;
+  background: #999;
+  box-shadow: inset 0px 10px 15px rgba(0, 0, 0, 0.4), inset 0px -1px 3px rgba(0, 0, 0, 0.7);
+}
+.control-btn:before {
+  display: block;
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  z-index: -1;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #eee;
+  border-radius: 32px;
+  width: 64px;
+  height: 64px;
+  box-shadow: 0 10px 20px #999, inset 0px 1px 5px #000, 0 -10px 20px #fff;
+  background: #555;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #555), color-stop(1, #444));
+  background: -ms-linear-gradient(bottom, #555, #444);
+  background: -moz-linear-gradient(center bottom, #555 0%, #444 100%);
+  background: -o-linear-gradient(#444, #555);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#444', endColorstr='#555', GradientType=0);
+}
+.control-btn:after {
+  display: none;
+  content: '';
+  position: absolute;
+  top: -7px;
+  left: -7px;
+  width: 64px;
+  height: 64px;
+  border-radius: 35px;
+  background: none;
+}
+.control-btn.large {
+  width: auto;
+  padding: 0px 30px;
+}
+.control-btn.large:before {
+  padding: 0px 74px;
+  content: '';
+  width: auto;
+}
+.control-btn.large:after {
+  padding: 0px 100px;
+  content: '';
+  width: auto;
+}
+
+table#timertable{
+    width: 100%;
+}
+
+table#timertable td {
+    padding:10px;
+}
+
+#addTable{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+#sensorValues {
+    padding: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+            background-color: rgba(61, 61, 61, 1);
+}
+div#sensorValues div.sensor-values {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    text-align: center;
+    cursor: pointer;
+}
+div#sensorValues div.sensor-values:hover {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, .7);
+	transform-style: preserve-3d;
+}
+@media screen and (max-width: 768px) {
+    #commandSet{
+        position: relative;
+        top: 0%;
+        transform: translateY(0%);
+        color:grey;
+        float: right;
+        margin:0;
+        display:none;
+    }
+}
+@media screen and (max-width: 700px) {
+    .btncontainer li {
+      padding: 20px;
+      display: table-cell;
+    }
+  div#sensorValues {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    font-size: .8em;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  div#sensorValues div.sensor-values {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+  div#sensorValues div.sensor-values:hover {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+  div#sensorValues div.sensor-values label {
+    margin-left: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+div#sensorValues div.sensor-values > div {
+  font-size: 4em;
+  font-weight: 200;
+}
+div#sensorValues div.sensor-values > label {
+  font-size: 1.5em;
+}
+div#sensorValues div.sensor-values > label {
+  font-size: 1.5em;
+}
+div#sensorValues div.sensor-values div.distance {
+  color: #FF9300;
+}
+div#sensorValues div.sensor-values div.distance span {
+  margin-left: 10px;
+  font-size: .4em;
+}
+div#sensorValues div.sensor-values div.wind {
+  color: #2b908f;
+}
+div#sensorValues div.sensor-values div.wind span {
+  margin-left: 10px;
+  font-size: .4em;
+}
+div#sensorValues div.sensor-values div.pm25 {
+  color: #90ee7e;
+}
+div#sensorValues div.sensor-values div.pm25 span {
+  margin-left: 10px;
+  font-size: .4em;
+}
+div#sensorValues div.sensor-values div.temperature {
+  color: #f45b5b;
+}
+div#sensorValues div.sensor-values div.temperature span {
+  margin-left: 10px;
+  font-size: .4em;
+}
+div#sensorValues div.sensor-values div.humidity {
+  color: #F8F00E;
+}
+div#sensorValues div.sensor-values div.humidity span {
+  margin-left: 10px;
+  font-size: .4em;
+}
+
+.status-green {
+    z-index: 1;
+    position: absolute;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(9, 156, 107);
+    background-color: rgb(71, 220, 178);
+    width: 20px;
+    height: 20px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-box-shadow: inset -0.6px -1.9px 4px 0px rgba(21, 139, 100, 0.8);
+    -moz-box-shadow: inset -0.6px -1.9px 4px 0px rgba(21, 139, 100, 0.8);
+    box-shadow: inset -0.6px -1.9px 4px 0px rgba(21, 139, 100, 0.8);
+}
+.status-green-glow {
+    z-index: 0;
+    position: absolute;
+    background-color:#2f343a;
+    width: 20px;
+    height: 20px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-box-shadow: 0px 0px 8px 1px rgba(21, 139, 100, 0.7);
+    -moz-box-shadow: 0px 0px 8px 1px rgba(21, 139, 100, 0.7);
+    box-shadow: 0px 0px 8px 1px rgba(21, 139, 100, 0.7);
+}
+.status-red {
+    z-index: 1;
+    position: absolute;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(156, 9, 9);
+    background-color: rgb(220, 24, 71);
+    width: 20px;
+    height: 20px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-box-shadow: inset -0.6px -1.9px 4px 0px rgba(139, 21, 21, 0.8);
+    -moz-box-shadow: inset -0.6px -1.9px 4px 0px rgba(139, 21, 21, 0.8);
+    box-shadow: inset -0.6px -1.9px 4px 0px rgba(139, 21, 21, 0.8);
+}
+.status-red-glow {
+    z-index: 0;
+    position: absolute;
+    background-color:#2f343a;
+    width: 20px;
+    height: 20px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-box-shadow: 0px 0px 8px 1px rgba(139, 21, 21, 0.7);
+    -moz-box-shadow: 0px 0px 8px 1px rgba(139, 21, 21, 0.7);
+    box-shadow: 0px 0px 8px 1px rgba(139, 21, 21, 0.7);
+}
+.lower {
+  /*position: relative;*/
+  max-width: 100%;
+      /*height: 100%;*/
+}
+.lower .contents{
+    width: 100%;
+    height: 55%;
+    position: absolute;
+    z-index: 1;
+    transition: opacity .7s cubic-bezier(.42,0,.34,1.01);
+    opacity: 1;
+}
+.contents.folded{
+    opacity: 0;
+    z-index: 0;
+}
